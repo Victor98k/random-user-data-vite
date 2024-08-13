@@ -36,8 +36,6 @@ h1 {
 
 .avatarImg {
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
   object-fit: cover;
   margin-bottom: 0.5rem;
 }

@@ -47,7 +47,11 @@ function Home() {
           <div className={styles.userProfile}>
             <Card hoverable className={styles.card}>
               <div className={styles.cardContent}>
-                <Avatar className={styles.avatarImg} src={user.picture.large} />
+                <Avatar
+                  className={styles.avatarImg}
+                  src={user.picture.large}
+                  style={{ width: "100px", height: "100px" }}
+                />
                 <div className={styles.cardDescription}>
                   <h2
                     className={styles.firstName}
