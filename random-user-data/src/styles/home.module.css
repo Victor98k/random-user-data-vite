@@ -69,8 +69,28 @@ h1 {
 /* Mobile  Styles*/
 
 @media (max-width: 600px) {
+  .mainContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .userContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .userProfile {
     width: 100%;
     margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin: 10px;
   }
 }
