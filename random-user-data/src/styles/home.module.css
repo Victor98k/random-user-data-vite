@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.loadingFetch,
+.errorMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.userContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  height: 100vh;
+}
+
+.avatarImg {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.carDescription {
+  text-align: center;
+}
+
+.firstName {
+  color: #1890ff;
+}
+.icon {
+  margin-right: 0.5rem;
+}
+
+.userProfile {
+  width: 35%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.refetchBtn {
+  margin-top: 1rem;
+}
+
+/* Mobile  Styles*/
+
+@media (max-width: 600px) {
+  .userProfile {
+    width: 100%;
+    margin: 1rem;
+  }
+}
