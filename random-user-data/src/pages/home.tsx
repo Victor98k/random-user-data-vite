@@ -19,58 +19,60 @@ function Home() {
   // fetching data fails
   if (loading)
     return (
-      <Spin size="large" className={styles.loadingFetch} tip="Loading..." />
+      <div className={styles.mainContainer}>
+        <Spin size="large" className={styles.loadingFetch} tip="Loading..." />
+      </div>
     );
   if (error)
     return (
-      <Result
-        status="error"
-        title="Error"
-        subTitle="There was an error fetching the user data."
-        extra={
-          <Button type="primary" onClick={() => window.location.reload()}>
-            Retry
-          </Button>
-        }
-      />
+      <div className={styles.mainContainer}>
+        <Result
+          status="error"
+          title="Error"
+          subTitle="There was an error fetching the user data."
+          extra={
+            <Button type="primary" onClick={() => window.location.reload()}>
+              Retry
+            </Button>
+          }
+        />
+      </div>
     );
 
   return (
-    <div className={styles.userContainer}>
-      <h1>Our members</h1>
-      {user && (
-        <div className={styles.userProfile}>
-          <Card hoverable>
-            <div className={styles.cardContent}>
-              <Avatar src={user.picture.large} className={styles.avatarImg} />
-              <div className={styles.cardDescription}>
-                <h2
-                  className={styles.firstName}
-                >{`${user.name.first} ${user.name.last}`}</h2>
-                <a href="">
-                  {" "}
-                  <MailOutlined className={styles.icon} />
-                  {`${user.email}`}
-                </a>
-                <p>
-                  {" "}
-                  <PhoneOutlined className={styles.icon} />
-                  {/* {`${user.phone}`} */}
-                  {user.phone}
-                </p>
-                <p>
-                  {" "}
-                  <EnvironmentOutlined className={styles.icon} />
-                  {`${user.location.country}`}
-                </p>
+    <div className={styles.mainContainer}>
+      <div className={styles.userContainer}>
+        <h1>Our members</h1>
+        {user && (
+          <div className={styles.userProfile}>
+            <Card hoverable className={styles.card}>
+              <div className={styles.cardContent}>
+                <Avatar className={styles.avatarImg} src={user.picture.large} />
+                <div className={styles.cardDescription}>
+                  <h2
+                    className={styles.firstName}
+                  >{`${user.name.first} ${user.name.last}`}</h2>
+                  <a href="">
+                    <MailOutlined className={styles.icon} />
+                    {user.email}
+                  </a>
+                  <p>
+                    <PhoneOutlined className={styles.icon} />
+                    {user.phone}
+                  </p>
+                  <p>
+                    <EnvironmentOutlined className={styles.icon} />
+                    {user.location.country}
+                  </p>
+                </div>
               </div>
-            </div>
-          </Card>
-          <Button onClick={fetchUser} className={styles.refetchBtn}>
-            New user
-          </Button>
-        </div>
-      )}
+            </Card>
+            <Button onClick={fetchUser} className={styles.refetchBtn}>
+              New user
+            </Button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
