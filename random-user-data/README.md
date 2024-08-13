@@ -3,7 +3,7 @@
 ## Setup
 
 1. cd random-user-data-vite/
-2. cd src/
+2. cd random-user-data-vite/src
 3. npm install
 4. npm run dev
 
